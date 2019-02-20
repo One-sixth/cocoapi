@@ -9,7 +9,9 @@ ext_modules = [
         'pycocotools._mask',
         sources=['../common/maskApi.c', 'pycocotools/_mask.pyx'],
         include_dirs = [np.get_include(), '../common'],
-        extra_compile_args=['-Wno-cpp', '-Wno-unused-function', '-std=c99'],
+        # remove this line to support windows build
+        #extra_compile_args=['-Wno-cpp', '-Wno-unused-function', '-std=c99'],
+        extra_compile_args=[],
     )
 ]
 
